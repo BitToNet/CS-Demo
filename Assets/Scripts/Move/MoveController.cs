@@ -22,9 +22,14 @@ public class MoveController : MonoBehaviour {
     float h, v;
 
     Vector3 moveVec;
+    
+    Animator am;
 
     // Use this for initialization
     void Start () {
+        
+        am = transform.GetComponent<Animator>();
+        
         //joystick.onJoystickDownEvent += OnJoystickDownEvent;
         joystick.onJoystickUpEvent += OnJoystickUpEvent;
         joystick.onJoystickDragEvent += OnJoystickDragEvent;
@@ -105,7 +110,8 @@ public class MoveController : MonoBehaviour {
         Vector3 displacement = velocity * Time.deltaTime;
         Vector3 newPosition = transform.localPosition + displacement;
         transform.localPosition = newPosition;
-     
+
+        am.SetBool("run", isRun);
         
         if ( isRun && (h != 0 || v != 0) )
         {
