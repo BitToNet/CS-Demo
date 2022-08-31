@@ -73,7 +73,7 @@ public class MoveController : MonoBehaviour {
         
         am = transform.GetComponent<Animator>();
         
-        //joystick.onJoystickDownEvent += OnJoystickDownEvent;
+        // joystick.onJoystickDownEvent += OnJoystickDownEvent;
         joystick.onJoystickUpEvent += OnJoystickUpEvent;
         joystick.onJoystickDragEvent += OnJoystickDragEvent;
         //joystick.onJoystickDragEndEvent += OnJoystickDragEndEvent;
